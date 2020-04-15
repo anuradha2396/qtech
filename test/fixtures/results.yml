@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fruad_suspect: MyString
+  grades: MyString
+  attempted_ques: 1
+  unattempted_ques: 1
+  correct_questions: 1
+  wrong_questions: 1
+  marks: 1
+
+two:
+  fruad_suspect: MyString
+  grades: MyString
+  attempted_ques: 1
+  unattempted_ques: 1
+  correct_questions: 1
+  wrong_questions: 1
+  marks: 1
