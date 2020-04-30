@@ -60,39 +60,39 @@
           <div class="row">
             <div class="col-sm-6"> 
               <div class="col-left">
-                <form method="post">
+                <form method="post" action="/create_registration">
                   <div class="form-group">
-                    <label class="inp-label">Email_Id<span class="required"> * </span></label>
-                    <input type="email" class="form-control inp-field" name="email" placeholder="Enter Email.." required="required">
+                    <label class="inp-label">Email<span class="required"> * </span></label>
+                    <input type="email" class="form-control inp-field" name="user[email]" placeholder="Enter Email.." required="required">
                   </div>
                   <div class="form-group">
-                    <label class="inp-label">First Name<span class="required"> * </span></label>
-                    <input type="text" name="fname" class="form-control inp-field" placeholder="Enter First Name.." required="required">
+                    <label class="inp-label">First_name<span class="required"> * </span></label>
+                    <input type="text" name="user[first_name]" class="form-control inp-field" placeholder="Enter First Name.." required="required">
                   </div>
                   <div class="form-group">
                     <label class="inp-label">Last Name<span class="required"> * </span></label>
-                    <input type="text" name="lname" class="form-control inp-field"  placeholder="Enter Last Name.." required="required">
+                    <input type="text" name="user[last_name]" class="form-control inp-field"  placeholder="Enter Last Name.." required="required">
                   </div>  
                   <div class="form-group">
                     <label class="inp-label">Date of Birth <span class="required"> * </span></label>
-                    <input type="text" name="dob" id="datepicker" class="form-control date inp-field"  placeholder="MM/DD/YYYY" required="required">
+                    <input type="text" name="user[birthdate]" id="datepicker" class="form-control date inp-field"  placeholder="MM/DD/YYYY" required="required">
                   </div>  
                   <div class="form-group">
                     <label class="inp-label">Gender <span class="required"> * </span></label>
-                    <label class="radio-inline"><input type="radio" name="gender" checked>Male</label>
-                    <label class="radio-inline"><input type="radio" name="gender">Female</label>
+                    <label class="radio-inline"><input type="radio" name="user[gender]" checked>Male</label>
+                    <label class="radio-inline"><input type="radio" name="user[gender]">Female</label>
                   </div>
                   <div class="form-group">
                     <label class="inp-label">Contact Number <span class="required"> * </span></label>
-                    <input type="text" name="number" class="form-control inp-field" placeholder="Enter Number.." required="required">
+                    <input type="text" name="user[phone_no]" class="form-control inp-field" placeholder="Enter Number.." required="required">
                   </div>
                   <div class="form-group">
                     <label class="inp-label">Password<span class="required"> * </span></label>
-                    <input type="password" name="pwd" class="form-control inp-field"  placeholder="Enter Password.." required="required">
+                    <input type="password" name="user[password]" class="form-control inp-field"  placeholder="Enter Password.." required="required">
                   </div>
                   <div class="form-group">
                     <label class="inp-label">Confirm Password<span class="required"> * </span></label>
-                    <input type="password" name="c_pwd" class="form-control inp-field"  placeholder="Retype Password.." required="required">
+                    <input type="password" name="user[retype_password]" class="form-control inp-field"  placeholder="Retype Password.." required="required">
                     
                   </div>
                   <div class="form-btn">
