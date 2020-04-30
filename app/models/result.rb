@@ -1,3 +1,3 @@
 class Result < ApplicationRecord
-	belond_to :user
+	belongs_to :user
 end

@@ -3,17 +3,19 @@
 one:
   first_name: MyString
   last_name: MyString
-  birthdate: 2020-04-14
-  gender: MyString
+  birthdate: 2020-04-24
+  gender: MyText
   email: MyString
   password: 1
+  retype_password: 1
   phone_no: 1
 
 two:
   first_name: MyString
   last_name: MyString
-  birthdate: 2020-04-14
-  gender: MyString
+  birthdate: 2020-04-24
+  gender: MyText
   email: MyString
   password: 1
+  retype_password: 1
   phone_no: 1

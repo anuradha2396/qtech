@@ -1,0 +1,2 @@
+class Userail < ApplicationRecord
+end
