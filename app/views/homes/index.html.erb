@@ -1,59 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>QuizTech</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/index-style.css"> 
-	</head>
+	
 <body class="wow fadeIn">
-	<!-- header start -->	
-	<header class="navbar site-header navbar-fixed-top wow fadeIn" id="navbar">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#siteNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a  href="javascript:void(0)" class="navbar-brand site-logo resized-link" id="logo">QuizTech</a>
-			</div>
-			<div class="collapse navbar-collapse" id="siteNavbar">
-				<ul class="navbar-nav navbar-right navlink">
-					<li>
-						<a class="resized-link" href="javascript:void(0)" title="Home">Home</a>
-					</li>
-					<li class="dropdown">
-						<!-- <a class="dropdown-toggle resized-link" data-toggle="dropdown" href="javascript:void(0)" title="Login">Login
-							<span class="fa fa-angle-down resized-link"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="javascript:void(0)" title="User login">User</a></li>
-							<li><a href="javascript:void(0)" title="Admin login">Admin</a></li> 
-						</ul> -->
-						<%= link_to 'login' ,  sessions_new_path  , :class => "login-link resizsed-link"%>
-					</li>
-					 
-					<li>
-						<a class="resized-link" href="javascript:void(0)" title="Contact us">Contact Us</a>
-
-
-					</li>	
-					<li>
-						 <!-- <a href="javascript:void(0)" title="Register" class="register-link resized-link">Register</a> -->
-						<%= link_to 'Register', new_home_path, :class =>"register-link resized-link"%>
-					</li>		
-				</ul>
-			</div>
-		</div>
-	</header>
-	<!-- header end -->	
+	
 	<!--Banner section start -->
 	<div class="banner-section">
 		<div class="container">	
@@ -63,10 +12,7 @@
 				<button class="btn btn-lg start-button wow fadeIn">Get Started</button>
 			</div>
 			<div class="banner">
-				<!-- <img src="/assests/image/banner.png" alt="banner" class="img-responsive wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s" width="2252" height="700"> -->
 				<%= image_tag('banner.png', :alt => "banner", :class => 'img-responsive wow fadeInUp') %>
-
-
 			</div>
 			<!--Banner section end-->
 		</div>	
@@ -80,10 +26,7 @@
 			</div>
 			<div class="row">				
 				<div class="col-sm-5 col-left">
-					<!-- <img src="assests/image/feature.png" alt="feature" class="img-responsive" width="11181" height="595"> -->
 					<%= image_tag('feature.png', :alt => "hello", :class => 'img-responsive') %>
-
-
 				</div>
 				<div class="col-sm-7 col-right">
 					<div id="siteCarousel" class="carousel slide" data-ride="carousel">
@@ -160,10 +103,7 @@
 				<div class="col-sm-6 col-lg-4">
 					<div class="grid-col wow bounceInLeft">
 						<div class="col-img">
-							<!-- <img src="img/g1.png" class="img-responsive" width="100" height="100"> -->
 							<%= image_tag('g1.png', :alt => "g1", :class => 'class name') %>
-
-
 						</div>
 						<div class="col-content">
 							<div class="col-heading">Systematic analaysis</div>
@@ -176,10 +116,7 @@
 				<div class="col-sm-6 col-lg-4 wow bounceInDown">
 					<div class="grid-col">
 						<div class="col-img">
-							<!-- <img src="img/g2.png" class="img-responsive" width="100" height="100"> -->
 							<%= image_tag('g2.png', :alt => "g2", :class => 'class name') %>
-
-
 						</div>
 						<div class="col-content">
 							<div class="col-heading">Better evaluation</div>
@@ -192,10 +129,7 @@
 				<div class="col-sm-6 col-lg-4 wow bounceInRight">
 					<div class="grid-col">
 						<div class="col-img">
-							<!-- <img src="img/g3.png" class="img-responsive" width="100" height="100"> -->
 							<%= image_tag('g3.png', :alt => "g3", :class => 'class name') %>
-
-
 						</div>
 						<div class="col-content">
 							<div class="col-heading">Omnipresent</div>
@@ -208,7 +142,6 @@
 				<div class="col-sm-6 col-lg-4 wow bounceInLeft">
 					<div class="grid-col">
 						<div class="col-img">
-							<!-- <img src="img/g4.png" class="img-responsive" width="100" height="100"> -->
 							<%= image_tag('g4.png', :alt => "g4", :class => 'class name') %>
 						</div>
 						<div class="col-content">
@@ -222,7 +155,6 @@
 				<div class="col-sm-6 col-lg-4 wow bounceInUp">
 					<div class="grid-col">
 						<div class="col-img">
-							<!-- <img src="img/g5.png" class="img-responsive" width="100" height="100"> -->
 							<%= image_tag('g5.png', :alt => "g5", :class => 'class name') %>
 						</div>
 						<div class="col-content">
@@ -236,8 +168,6 @@
 				<div class="col-sm-6 col-lg-4 wow bounceInRight">
 					<div class="grid-col">
 						<div class="col-img">
-							<!-- <img src="img/g6.png" class="img-responsive" width="100" height="100"> -->
-
 							<%= image_tag('g6.png', :alt => "g6", :class => 'class name') %>
 						</div>
 						<div class="col-content">

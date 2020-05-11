@@ -1,13 +1,5 @@
 class QuestionsController < ApplicationController
 
-def subject
-end
-
-def topic
-end
-
-def question_type
-end
 
 def list
 @sub = Subject.all
@@ -18,7 +10,7 @@ def create
 		if @sub.save
               redirect_to  questions_subject_path
         else
-        	abort(@user.errors.inspect)
+        	abort(@sub.errors.inspect)
         end
 end	
 

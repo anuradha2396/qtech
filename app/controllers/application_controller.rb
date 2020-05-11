@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
-end
+    before_action :authenticate_with_http_digest
+ end
 
 

@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 	get 'questions/subject' , to: 'questions#subject'
 	get 'questions/topic' , to: 'questions#topic'
 	get 'questions/question_type' , to: 'questions#question_type'
-	get 'create' , to: 'questions#create'
+	get 'questions/new_sub' , to: 'questions#new_sub'
+	post '/create_subject' , to: 'questions#create'
 	get 'new' , to: 'questions#new'
 
 end
