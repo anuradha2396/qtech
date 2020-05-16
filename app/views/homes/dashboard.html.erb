@@ -4,29 +4,9 @@
 		<title>Dashboard</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/dashboard-style.css"> 
+		
 	</head>
-<body class="wow fadeIn">
-	<!-- header start -->	
-	<header class="navbar dash-header" id="navbar">
-		<div class="navbar-btn">
-			<a class="nav-open-nav" id="open-nav" onclick="openSideBar()" title="Click to open"> 
-				<i class="fa fa-bars"></i>
-			</a>
-			<a class="nav-cls-btn" id="close-nav" onclick="closeSideBar()" title="click to close"> 
-				 <i class="fa fa-bars"></i>
-			</a>
-		</div>
-		<div class="brand">	
-			<a  href="javascript:void(0)" class="dash-logo" id="logo" title="Quiztech">QuizTech</a>
-		</div>
-	</header>
-	<!-- header end -->
+<body class="wow fadeIn"
 	
 	<!-- sidebar start -->
 	<aside class="side-nav wow slideInLeft" id="sidenav">
@@ -37,15 +17,13 @@
 			</li>
 			<li class="drop">
 				<a href="javascript:void(0)" title="Question Bank">
-					<i class="fa  fa-pencil-square"></i><span>Question Bank</span>
-					
-					</a>
+					<i class="fa  fa-pencil-square"></i><span>Question Bank</span></a>
 				<ul class="side-nav-dropdown">
 					<li><a href="/questions/subject" title="Subjects">
 						<i class="fa fa-book sub-icon"></i>Subjects</a></li>
-					<li><a href="/question/topic" title="Topics">
+					<li><a href="/topics/topic" title="Topics">
 						<i class="fa fa-file sub-icon"></i>Topics</a></li>
-					<li><a href="/question/question_type" title="Question Type">
+					<li><a href="/questions/question_type" title="Question Type">
 						<i class="fa fa-briefcase sub-icon"></i>Question Type</a></li>
 					<li><a href="javascript:void(0)" title="Objective Question">
 						<i class="fa fa-file-text sub-icon"></i>Objective Question</a></li>
@@ -106,13 +84,13 @@
 				<div class="link-indicators">
 					<ul class="multi-steps">
 						<li class="wow pulse" data-wow-duration="1s" data-wow-delay="0.4s">
-							<a href="javascript:void(0)" title="Define subject" class="indicate-link">Define subject</a>
+							<a href="/questions/subject" title="Define subject" class="indicate-link">Define subject</a>
 						</li>
 						<li class="wow pulse" data-wow-duration="1s" data-wow-delay="0.8s">
-							<a href="javascript:void(0)" title="Define topics" class="indicate-link">Define topics</a>
+							<a href="/questions/topic" title="Define topics" class="indicate-link">Define topics</a>
 						</li>
 						<li class="is-active wow pulse" data-wow-duration="1s" data-wow-delay="1.2s">
-							<a href="javascript:void(0)" title="Question type" class="indicate-link is-active">Question type</a>
+							<a href="/questions/question_type" title="Question type" class="indicate-link is-active">Question type</a>
 						</li>
 						<li class="is-active wow pulse" data-wow-duration="1s" data-wow-delay="1.6s">
 							<a href="javascript:void(0)" title="Objective question" class="indicate-link">Objective question</a>
@@ -125,9 +103,7 @@
 					<div class="dash-column col-1">
 						<div class="dash-col wow bounceInUp ">
 							<div class="dash-img">
-								<!-- <img src="img/d1.png" class="img-responsive" width="1294" height="946"> -->
-								<%= image_tag('d1.png', :alt => "hello", :class => 'img-responsive') %>
-
+								<img src="app/assests/img/d1.png" class="img-responsive" width="1294" height="946">
 							</div>
 							<div class="dash-col-heading">
 								<a href="javascript:void(0)" title="Exam Creation">Exam Creation</a>
@@ -137,9 +113,7 @@
 					<div class="dash-column col-2 wow bounceInUp">
 						<div class="dash-col">
 							<div class="dash-img">
-								<!-- <img src="img/d2.png" class="img-responsive"  width="12411" height="917"> -->
-								<%= image_tag('d2.png', :alt => "hello", :class => 'img-responsive') %>
-
+								<img src="img/d2.png" class="img-responsive"  width="12411" height="917">
 							</div>
 							<div class="dash-col-heading">
 								<a href="javascript:void(0)" title="Candidate Data">Candidate data</a>
@@ -149,9 +123,7 @@
 					<div class="dash-column col-3">
 						<div class="dash-col wow bounceInUp">
 							<div class="dash-img">
-								<!-- <img src="img/d3.png" class="img-responsive"  width="1131" height="871"> -->
-								<%= image_tag('d3.png', :alt => "hello", :class => 'img-responsive') %>
-
+								<img src="img/d3.png" class="img-responsive"  width="1131" height="871">
 							</div>
 							<div class="dash-col-heading">
 								<a href="javascript:void(0)" title="Candidate Result">Candidate Result</a>
