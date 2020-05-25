@@ -1,16 +1,45 @@
 class TopicsController < ApplicationController
 def create
-	@top = Topic.new(topic_params)
-	if @top.save
-      redirect_to question_topic_path       
+	@topic = Topic.new(topic_params)
+	if @topic.save
+      redirect_to topics_topic_path       
     else
-        abort(@top.errors.inspect)
+        abort(@topic.errors.inspect)
     end
 end
 
 def new
-	@top = Topic.new
+	@topic = Topic.new
+  @subject = Subject.all
 end
+
+def topic
+  @topic= Topic.all
+end
+
+def edit
+  @topic = Topic.find(params[:id])
+end
+
+ 
+def update
+  @topic = Topic.find(params[:id])
+ 
+  if @topic.update(topic_params)
+    redirect_to @topic
+  else
+    render 'topics_topic_path'
+  end
+end
+
+
+def destroy
+  @topic = Topic.find(params[:id])
+  @topic.destroy
+ 
+  redirect_to topics_topic_path
+end
+
 
 private
 	def topic_params   

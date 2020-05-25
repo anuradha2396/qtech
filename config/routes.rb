@@ -4,12 +4,14 @@ Rails.application.routes.draw do
     resources :homes
     
     get 'new' , to: 'homes#new'
-    get 'login' , to: 'homes#login'
+   
     post '/create_registration' , to: 'homes#create' 
     get 'create' , to: 'sessions#create'
     get 'dashboard' , to: 'homes#dashboard'
+    get 'users/login' , to: 'users#login'
+    get 'managements/selection' , to: 'managements#selection'
+    get '/login' , to: 'managements#selection'
 
-   
 	get  'sessions/new' , to:  'sessions#new'
 	get 'sessions/destroy' , to: 'sessions#destroy'
 
@@ -17,9 +19,16 @@ Rails.application.routes.draw do
 	get 'questions/topic' , to: 'questions#topic'
 	get 'questions/question_type' , to: 'questions#question_type'
 	post '/create' , to: 'questions#create'
-	get 'new' , to: 'questions#new'
+
 	get 'topics/topic' , to: 'topics#topic'
-	post '/create' , to: 'topics#create'
+	get 'topics/question_type' , to: 'topics#question_type'
+	post '/create_topic' , to: 'topics#create'
+
+	get 'objectives/objective' , to: 'objectives#objective'
+	get 'objectives/newobjective' , to: 'objectives#newobjective'
+
+	get 'schedules/schedule' , to: 'schedules#schedule'
+	get 'candidates/candidatedata' , to: 'candidates#candidatedata'
 	
 
 end

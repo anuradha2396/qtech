@@ -9,12 +9,20 @@
   </head>
 
   <body>
-      
+      <% unless controller_name=="questions"%>
+      <% unless controller_name=="homes" && action_name=="dashboard" %>
       <%= render partial:  'layouts/header'%>
-      
+      <%end%>
+      <%end%>
     <%= yield %>
-      
+      <% unless controller_name=="questions"%>
+      <% unless controller_name=="homes" && action_name=="dashboard" %>
+      <% unless controller_name=="candidates" && action_name=="candidatedata" %>
+      <% unless controller_name=="schedules" && action_name=="schedule" %>
       <%= render  partial: 'layouts/footer'%>
-      
-      </body>
+      <%end%>
+      <%end%>
+      <%end%>
+      <%end%>
+  </body>
 </html>
