@@ -13,7 +13,7 @@ def new
 end
 
 def ques
-	@ques = Question.new
+	@ques = Question.all
 end
 
  private
