@@ -1,0 +1,3 @@
+class Examcreation < ApplicationRecord
+	
+end

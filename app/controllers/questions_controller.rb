@@ -21,10 +21,8 @@ def subject
   @sub = Subject.all
 end
 
-def edit
-end
 
-    private
+  private
 	def subject_params   
        params.require(:subject).permit(:name)   
     end  

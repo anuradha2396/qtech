@@ -1,0 +1,2 @@
+module ExamcreationsHelper
+end

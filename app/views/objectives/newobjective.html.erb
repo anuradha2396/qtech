@@ -2,14 +2,6 @@
 <html lang="en">
 	<head>
 		<title>Question Bank</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/dashboard-style.css"> 
 	</head>
 <body class="wow fadeIn">
 	<!-- header start -->	
@@ -65,14 +57,6 @@
 			   <a href="javascript:void(0)" title="Candidate Result">
 				    <i class="fa fa-check-square"></i><span>Candidate Result</span></a>
 		   </li>
-		   <li data-toggle="modal" data-target="#reset-Modal" >
-			   <a href="javascript:void(0)" title="Reset Password">
-				   <i class="fa fa-key side-icon"></i><span>Reset Password</span></a>
-		   </li>
-		   <li data-toggle="modal" data-target="#forgot-Modal">
-			   <a href="javascript:void(0)" title="Forgot Password">
-				   <i class="fa fa-lock side-icon"></i><span>Forgot Password</span></a>
-		   </li>
 		   <li>
 			   <a href="javascript:void(0)" class="side-link" title="Logout">
 				   <i class="fa fa-sign-out side-icon"></i><span>Logout</span></a>
@@ -102,170 +86,81 @@
 					<div class="question-drop-col">
 						<div class="drop-col-content">
 							<label for="select-box">Subjects</label>
-							<select class="form-control" id="select-box">
-								<option selected disabled>All Subjects</option>
-								<option><span>C++</span></option>
-							</select> 		
+							<%=collection_select( "topic" ,"subject_id", Subject.all ,:id, :name, {:multiple => false })%> 		
 						</div>
+
 					</div>
 					<div class="question-drop-col">
 						<div class="drop-col-content">
-							<label for="select-box">Topic</label>
-							<select class="form-control" id="select-box">
-								<option selected disabled>All Topics</option>
-								<option><span>Array</span></option>
-							</select> 		
-						</div>
-					</div>
-				</div>
-				<div class="question-drop-container">
-					<div class="question-drop-col">
-						<div class="drop-col-content">
-							<label for="select-box">Question Type</label>
-							<select class="form-control" id="select-box">
-								<option selected disabled>Type</option>
-								<option><span>MCQ</span></option>
-								<option><span>True/false</span></option>
-							</select> 		
-						</div>
-					</div>
-					<div class="question-drop-col">
-						<div class="drop-col-content">
-							<label for="select-box">Difficulty Level</label>
-							<select class="form-control" id="select-box">
-								<option selected disabled>Level</option>
-								<option><span>Easy</span></option>
-								<option><span>Medium</span></option>
-								<option><span>Hard</span></option>
-							</select> 		
+							<label for="select-box">Topic
+							</label> 
+							<%=collection_select( "topic" ,"topic_id", Topic.all ,:id, :name, {:multiple => false })%> 
 						</div>
 					</div>
 				</div>
 				<div class="objective-content-box">
+				 <form method="post" action="/ques">
+							
 					<div class="drop-col-content">
 					<label>Question</label>
-					<textarea col="10" rows="5" name="question" placeholder="Enter Question here" class="form-control"></textarea>
+					<textarea col="10" rows="5" name="question[question_body]" placeholder="Enter Question here" class="form-control"></textarea>
 					</div>
 				</div>
 				<div class="objective-content-box">
+					
 					<div class="drop-col-content">
 					<label>Modal Answer</label>
-					<textarea col="10" rows="3" name="answer" placeholder="Enter Modal Answer" class="form-control"></textarea>
+					<textarea col="10" rows="3" name="question[modal_ans]" placeholder="Enter Modal Answer" class="form-control"></textarea>
 					</div>
-				</div>
+				
 				<div class="objective-content-box">
 					<div class="drop-col-content">
 					<label>Marks</label>
-					<input type="text" name="marks" placeholder="Enter Marks" class="form-control inp">
+					<input type="text" name="question[marks]" placeholder="Enter Marks" class="form-control inp">
 					</div>
-				</div>
+				
 				<div class="objective-choice">
 					<div class="option-choice-heading">
 						Correct Choice
 					</div>
 					<div class="option-values">
-						 <form>
+						 
 							<div class="option-value-container"> 
 								<label for="opt-1" class="option-inp">Option 1</label>
-								<input type="radio" name="option" id="opt-1" class="option-inp">
-								<input type="text" name="option-value" placeholder="Enter Option Value" class="form-control option-inp inp">
+								<input type="radio" name="question[option_1]" id="opt-1" class="option-inp">
+								<input type="text" name="question[option_1]" placeholder="Enter Option Value" class="form-control option-inp inp">
 							</div>
 							<div class="option-value-container"> 
 								<label for="opt-2" class="option-inp">Option 2</label>
-								<input type="radio" name="option" id="opt-2" class="option-inp">
-								<input type="text" name="option-value" placeholder="Enter Option Value" class="form-control option-inp inp">
+								<input type="radio" name="question[option_2]" id="opt-2" class="option-inp">
+								<input type="text" name="question[option_2]" placeholder="Enter Option Value" class="form-control option-inp inp">
 							</div>
 							<div class="option-value-container"> 
 								<label for="opt-3" class="option-inp">Option 3</label>
-								<input type="radio" name="option" id="opt-3" class="option-inp">
-								<input type="text" name="option-value"  placeholder="Enter Option Value" class="form-control option-inp inp">
+								<input type="radio" name="question[option_3]" id="opt-3" class="option-inp">
+								<input type="text" name="question[option_3]  placeholder="Enter Option Value" class="form-control option-inp inp">
 							</div>
 							<div class="option-value-container"> 
 								<label for="opt-4" class="option-inp">Option 4</label>
-								<input type="radio" name="option" id="opt-4" class="option-inp">
-								<input type="text" name="option-value" placeholder="Enter Option Value" class="form-control option-inp inp">
+								<input type="radio" name="question[option_4]" id="opt-4" class="option-inp">
+								<input type="text" name="question[option_4]" placeholder="Enter Option Value" class="form-control option-inp inp">
 							</div>
-						</form> 
+							</div>
+							</div>
+						
 					</div>
 					<div class="objective-option-button">
 						<button type="reset" class="btn save-btn obj-btn">Reset</button>
 						<button type="submit" class="btn save-btn obj-btn">Save</button>
 						<button type="button" class="btn cancel-btn obj-btn">Cancel</button>
+
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</main>
 	<!--main content end-->
-			
-	<!--Forgot password Modal start-->
-	<div class="modal fade" id="forgot-Modal" role="dialog">
-		<div class="modal-form wow slideInDown">
-			<div class="modal-content">
-				<div class="modal-form-container">
-					<button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
-					<div class="modal-form-heading">
-						<img src="img/password.png" alt="forgot password" width="60" height="60">
-						<h3>Forgot Password?</h3>
-						<p>You can reset your password here..</p>
-					</div>
-					<div class="modal-form-content">
-						<form>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-envelope icon"></i></label>
-								<input type="email" class="inp-field" name="email" placeholder="Your Email..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-btn">
-								<button type="submit" class="btn login-btn">Send</button>
-							</div>	
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Forgot password Modal end-->
-			
-	<!--Reset password Modal start-->
-	<div class="modal fade" id="reset-Modal" role="dialog">
-		<div class="modal-form wow slideInDown">
-			<div class="modal-content">
-				<div class="modal-form-container">
-					<button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
-					<div class="modal-form-heading">
-						<img src="img/reset.png" alt="reset password" width="50" height="50">
-						<h3>Change Password</h3>
-						<p>You can reset your password here..</p>
-					</div>
-					<div class="modal-form-content">
-						<form>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="Current password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon reset-icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="New password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon reset-icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="Re-enter password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-btn">
-								<button type="submit" class="btn login-btn">Confirm</button>
-							</div>	
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Reset password Modal end-->
-
 <script src="js/index.js"></script>	
 <script src="js/wow.js"></script>
 <script>

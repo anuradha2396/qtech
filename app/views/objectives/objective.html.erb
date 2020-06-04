@@ -57,14 +57,6 @@
 			   <a href="javascript:void(0)" title="Candidate Result">
 				    <i class="fa fa-check-square"></i><span>Candidate Result</span></a>
 		   </li>
-		   <li data-toggle="modal" data-target="#reset-Modal" >
-			   <a href="javascript:void(0)" title="Reset Password">
-				   <i class="fa fa-key side-icon"></i><span>Reset Password</span></a>
-		   </li>
-		   <li data-toggle="modal" data-target="#forgot-Modal">
-			   <a href="javascript:void(0)" title="Forgot Password">
-				   <i class="fa fa-lock side-icon"></i><span>Forgot Password</span></a>
-		   </li>
 		   <li>
 			   <a href="javascript:void(0)" class="side-link" title="Logout">
 				   <i class="fa fa-sign-out side-icon"></i><span>Logout</span></a>
@@ -92,8 +84,9 @@
 			<div class="subject-container">
 				<div class="button-input-container">
 					<div class="button-section">
-						<button class="btn add-new" href="/objectives/newobjective" data-toggle="modal" data-target="#new_topic-Modal"><i class="fa fa-plus-circle "></i>New</button>
-						<button class="btn action">Delete<i class="fa fa-minus-circle"></i></button>
+						
+						<%= link_to "new", objectives_newobjective_path, class: 'btn add-new' %>
+						
 					</div>
 					<div class="search">
 						<div>
@@ -105,31 +98,16 @@
 					<div class="question-drop-col">
 						<div class="drop-col-content">
 							<label for="select-box">Subjects</label>
-							<select class="form-control" id="select-box">
-								<option selected disabled>All Subjects</option>
-								<option><span>C++</span></option>
-							</select> 		
+							<%=collection_select( "topic" ,"subject_id", Subject.all ,:id, :name, {:multiple => false })%> 			
 						</div>
 					</div>
 					<div class="question-drop-col">
 						<div class="drop-col-content">
 							<label for="select-box">Topic</label>
-							<select class="form-control" id="select-box">
-								<option selected disabled>All Topics</option>
-								<option><span>Array</span></option>
-							</select> 		
+							<%=collection_select( "topic" ,"topic_id", Topic.all ,:id, :name, {:multiple => false })%> 		
 						</div>
 					</div>
-					<div class="question-drop-col">
-						<div class="drop-col-content">
-							<label for="select-box">Question Status</label>
-							<select class="form-control" id="select-box">
-								<option selected disabled>Status</option>
-								<option>Active</option>
-								<option>Deactive</option>
-							</select> 		
-						</div>
-					</div>
+					
 				</div>
 				<div class="objective-total-container">
 					<div class="objective-total-col">
@@ -190,7 +168,6 @@
 								<td><span>Active</span></td>
 								<td><span>Medium</span></td>
 								<td><span>1</span></td>
-								<td><a href="javascript:void(0)" title="edit question" class="edit-icon">
 								</a></td>
 								<td><a href="javascript:void(0)" title="view question" class="view-icon">
 								</a></td>
@@ -202,75 +179,6 @@
 		</div>
 	</main>
 	<!--main content end-->
-			
-	<!--Forgot password Modal start-->
-	<div class="modal fade" id="forgot-Modal" role="dialog">
-		<div class="modal-form wow slideInDown">
-			<div class="modal-content">
-				<div class="modal-form-container">
-					<button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
-					<div class="modal-form-heading">
-						<img src="img/password.png" alt="forgot password" width="60" height="60">
-						<h3>Forgot Password?</h3>
-						<p>You can reset your password here..</p>
-					</div>
-					<div class="modal-form-content">
-						<form>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-envelope icon"></i></label>
-								<input type="email" class="inp-field" name="email" placeholder="Your Email..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-btn">
-								<button type="submit" class="btn login-btn">Send</button>
-							</div>	
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Forgot password Modal end-->
-			
-	<!--Reset password Modal start-->
-	<div class="modal fade" id="reset-Modal" role="dialog">
-		<div class="modal-form wow slideInDown">
-			<div class="modal-content">
-				<div class="modal-form-container">
-					<button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
-					<div class="modal-form-heading">
-						<img src="img/reset.png" alt="reset password" width="50" height="50">
-						<h3>Change Password</h3>
-						<p>You can reset your password here..</p>
-					</div>
-					<div class="modal-form-content">
-						<form>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="Current password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon reset-icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="New password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon reset-icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="Re-enter password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-btn">
-								<button type="submit" class="btn login-btn">Confirm</button>
-							</div>	
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Reset password Modal end-->
-
 <script src="js/index.js"></script>	
 <script src="js/wow.js"></script>
 <script>

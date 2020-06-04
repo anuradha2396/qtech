@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+	
 <body class="wow fadeIn">
 	<!-- header start -->	
 	<header class="navbar dash-header" id="navbar">
@@ -26,21 +26,21 @@
 					<i class="fa fa-dashboard"></i><span>Dashboard</span></a>
 			</li>
 			<li class="drop">
-				<a href="javascript:void(0)" title="Question Bank" class="active-dashlink">
+				<a href="javascript:void(0)" title="Question Bank">
 					<i class="fa  fa-pencil-square"></i><span>Question Bank</span></a>
 				<ul class="side-nav-dropdown">
 					<li><a href="javascript:void(0)" title="Subjects">
 						<i class="fa fa-book sub-icon"></i>Subjects</a></li>
 					<li><a href="javascript:void(0)" title="Topics">
 						<i class="fa fa-file sub-icon"></i>Topics</a></li>
-					<li><a href="javascript:void(0)" title="Question Type" class="sub-active-dashlink">
+					<li><a href="javascript:void(0)" title="Question Type">
 						<i class="fa fa-briefcase sub-icon"></i>Question Type</a></li>
 					<li><a href="javascript:void(0)" title="Objective Question">
 						<i class="fa fa-file-text sub-icon"></i>Objective Question</a></li>
 			   </ul>
 			</li>
 			<li>
-				<a href="javascript:void(0)" title="Exam Creation">
+				<a href="javascript:void(0)" title="Exam Creation" class="active-dashlink">
 					<i class="fa fa-pencil-square-o"></i><span>Exam Creation</span></a>
 		   </li>
 		   <li>
@@ -76,39 +76,49 @@
 		<div class="dash-content">
 			<div class="page-indicator">
 				<a class="indicate-arrow" href="javascript:void(0)" title="Dashboard"><i class="fa fa-home"></i></a>
-				<span class="indicate-arrow">Question Bank</span>
-				<span>Question Type</span>
+				<span>Exam Creation new</span>
 			</div>
-			<div class="subject-container">
-				<div class="total-question-section">
-					<div class="total-img">
-						<img src="img/total.png" alt="book" width="100" height="100" class="img-responsive">
-					</div>
-					<div class="total-question-content">
-						<p>Total Question Type :</p>
-						<span>2</span>
-					</div>
-				</div>
-				<div class="subject-table">
-					<table class="table">
-						<thead class="t-head">
-							<tr>
-								<th>Question Type Name</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody class="t-body">
-							<tr class="t-row">
-								<td><span>Multiple choice question</span></td>
-								<td><span>MCQ</span></td>
-							</tr>
-							<tr class="t-row">
-								<td><span>True/False</span></td>
-								<td><span>True/False</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+			<div class="subject-container creation-container">
+				<ul class="nav nav-pills">
+					<li class="active"><a data-toggle="pill" href="#home">General setting</a></li>
+				</ul>
+				<div class="tab-content">
+					<div id="home" class="tab-pane fade in active">
+						<div class="general-content">
+							<form method="post" action="/exam">
+								<div class="form-group">
+									<label class="control-label col-sm-4" for="e_name">Exam Name</label>
+									<div class="col-sm-4 inp-col">
+										 <input type="text" class="form-control" name="examcreation[exam_name]">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-4" for="e_duration">Exam Duration(in minutes)</label>
+									<div class="col-sm-4 inp-col">
+										<input type="text" class="form-control" name="examcreation[exam_duration]">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-4" for="select-box">Select Exam type</label>
+									<div class="col-sm-4 inp-col">
+										<select class="form-control" name="examcreation[exam_type]">
+											<option selected disabled>Select</option>
+											<option><span>True/False</span></option>
+											<option><span>MCQ</span></option>
+										</select> 	
+									 </div>	
+								</div>
+								
+								<div class="cad-form-btn">
+									<button type="submit" class="btn save-btn">generate</button>
+									<button type="submit" class="btn cancel-btn">Cancel</button>
+								</div>
+							
+						</div>
+						
+					
+					</form> 
+				 </div>
 			</div>
 		</div>
 	</main>

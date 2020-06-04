@@ -57,14 +57,6 @@
 			   <a href="javascript:void(0)" title="Candidate Result">
 				    <i class="fa fa-check-square"></i><span>Candidate Result</span></a>
 		   </li>
-		   <li data-toggle="modal" data-target="#reset-Modal" >
-			   <a href="javascript:void(0)" title="Reset Password">
-				   <i class="fa fa-key side-icon"></i><span>Reset Password</span></a>
-		   </li>
-		   <li data-toggle="modal" data-target="#forgot-Modal">
-			   <a href="javascript:void(0)" title="Forgot Password">
-				   <i class="fa fa-lock side-icon"></i><span>Forgot Password</span></a>
-		   </li>
 		   <li>
 			   <a href="javascript:void(0)" class="side-link" title="Logout">
 				   <i class="fa fa-sign-out side-icon"></i><span>Logout</span></a>
@@ -205,73 +197,6 @@
 	</div>
 	<!--New schedule Modal end-->	
 			
-	<!--Forgot password Modal start-->
-	<div class="modal fade" id="forgot-Modal" role="dialog">
-		<div class="modal-form wow slideInDown">
-			<div class="modal-content">
-				<div class="modal-form-container">
-					<button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
-					<div class="modal-form-heading">
-						<img src="img/password.png" alt="forgot password" width="60" height="60">
-						<h3>Forgot Password?</h3>
-						<p>You can reset your password here..</p>
-					</div>
-					<div class="modal-form-content">
-						<form>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-envelope icon"></i></label>
-								<input type="email" class="inp-field" name="email" placeholder="Your Email..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-btn">
-								<button type="submit" class="btn login-btn">Send</button>
-							</div>	
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Forgot password Modal end-->
-			
-	<!--Reset password Modal start-->
-	<div class="modal fade" id="reset-Modal" role="dialog">
-		<div class="modal-form wow slideInDown">
-			<div class="modal-content">
-				<div class="modal-form-container">
-					<button type="button" class="close modal-close-btn" data-dismiss="modal">&times;</button>
-					<div class="modal-form-heading">
-						<img src="img/reset.png" alt="reset password" width="50" height="50">
-						<h3>Change Password</h3>
-						<p>You can reset your password here..</p>
-					</div>
-					<div class="modal-form-content">
-						<form>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="Current password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon reset-icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="New password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-group input-box">
-								<label class="inp-label"><i class="fa fa-lock icon reset-icon"></i></label>
-								<input type="password" class="inp-field" name="password" placeholder="Re-enter password..">
-								<span class="focus-border"></span>
-							</div>
-							<div class="form-btn">
-								<button type="submit" class="btn login-btn">Confirm</button>
-							</div>	
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Reset password Modal end-->
 
 <script src="js/index.js"></script>	
 <script src="js/wow.js"></script>

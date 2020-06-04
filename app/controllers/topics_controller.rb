@@ -14,7 +14,8 @@ def new
 end
 
 def topic
-  @topic= Topic.all
+  @topic= Topic.new
+  @topic_list = Topic.all
 end
 
 def edit
@@ -32,17 +33,16 @@ def update
   end
 end
 
-
 def destroy
-  @topic = Topic.find(params[:id])
-  @topic.destroy
- 
-  redirect_to topics_topic_path
+    @topic = Topic.find_by_name("name")
+    if @topic.present?
+      @topic.destroy
+    end
+    redirect_to topics_topic_path
 end
-
 
 private
 	def topic_params   
-       params.require(:topic).permit(:name)   
+       params.require(:topic).permit(:name, :subject_id)   
     end  
 end

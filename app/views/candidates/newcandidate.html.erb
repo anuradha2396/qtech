@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+	
 <body class="wow fadeIn">
 	<!-- header start -->	
 	<header class="navbar dash-header" id="navbar">
@@ -26,14 +26,14 @@
 					<i class="fa fa-dashboard"></i><span>Dashboard</span></a>
 			</li>
 			<li class="drop">
-				<a href="javascript:void(0)" title="Question Bank" class="active-dashlink">
+				<a href="javascript:void(0)" title="Question Bank">
 					<i class="fa  fa-pencil-square"></i><span>Question Bank</span></a>
 				<ul class="side-nav-dropdown">
 					<li><a href="javascript:void(0)" title="Subjects">
 						<i class="fa fa-book sub-icon"></i>Subjects</a></li>
 					<li><a href="javascript:void(0)" title="Topics">
 						<i class="fa fa-file sub-icon"></i>Topics</a></li>
-					<li><a href="javascript:void(0)" title="Question Type" class="sub-active-dashlink">
+					<li><a href="javascript:void(0)" title="Question Type">
 						<i class="fa fa-briefcase sub-icon"></i>Question Type</a></li>
 					<li><a href="javascript:void(0)" title="Objective Question">
 						<i class="fa fa-file-text sub-icon"></i>Objective Question</a></li>
@@ -48,7 +48,7 @@
 				   <i class="fa fa-calendar"></i><span>Exam Scheduler</span></a>
 		   </li>
 		   <li>
-			   <a href="javascript:void(0)" title="Candidate Data">
+			   <a href="javascript:void(0)" title="Candidate Data" class="active-dashlink">
 				   	<i class="fa fa-users"></i><span>Candidate Data</span></a>
 		   </li>
 		   <li>
@@ -71,51 +71,76 @@
 	</aside>
 	<!-- sidebar end -->
 	
+	
 	<!--main content start-->
 	<main id="main">
 		<div class="dash-content">
-			<div class="page-indicator">
-				<a class="indicate-arrow" href="javascript:void(0)" title="Dashboard"><i class="fa fa-home"></i></a>
-				<span class="indicate-arrow">Question Bank</span>
-				<span>Question Type</span>
-			</div>
 			<div class="subject-container">
-				<div class="total-question-section">
-					<div class="total-img">
-						<img src="img/total.png" alt="book" width="100" height="100" class="img-responsive">
-					</div>
-					<div class="total-question-content">
-						<p>Total Question Type :</p>
-						<span>2</span>
-					</div>
+				<div class="candidate-heading">
+					Add New Candidate
 				</div>
-				<div class="subject-table">
-					<table class="table">
-						<thead class="t-head">
-							<tr>
-								<th>Question Type Name</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody class="t-body">
-							<tr class="t-row">
-								<td><span>Multiple choice question</span></td>
-								<td><span>MCQ</span></td>
-							</tr>
-							<tr class="t-row">
-								<td><span>True/False</span></td>
-								<td><span>True/False</span></td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="cad-form">
+					 <form <form method="post" action="/create_candidate">
+						 <div class="form-group">
+							 <label class="control-label col-sm-3" for="f_name">First Name</label>
+							 <div class="col-sm-9 inp-col">
+							   <input type="email" class="form-control" name="user[first_name]">
+							 </div>
+						  </div>
+						  <div class="form-group">
+							 <label class="control-label col-sm-3" for="f_name">Last Name</label>
+							 <div class="col-sm-9 inp-col">
+							    <input type="email" class="form-control" name="user[last_name]">
+							 </div>
+						  </div>
+						  <div class="form-group">
+							 <label class="control-label col-sm-3" for="dob">Date of Birth</label>
+							 <div class="col-sm-9 inp-col">
+								<input type="text" name="user[birthdate]" id="datepicker" class="form-control date"  placeholder="MM/DD/YYYY">
+							 </div>
+						  </div>	
+						   <div class="form-group">
+								<label class="control-label col-sm-3" >Gender</label>
+								<div class="col-sm-9 inp-col">
+									<label class="radio-inline"><input type="radio" name="user[gender]" checked>Male</label>
+									<label class="radio-inline"><input type="radio" name="user[gender]">Female</label>
+								</div>
+						   </div>
+						   <div class="form-group">
+								<label class="control-label col-sm-3">Contact Number</label>
+								<div class="col-sm-9 inp-col">
+									<input type="tel"  name="user[phone_no]" class="form-control">
+								</div>	
+						   </div>
+						  <div class="form-group">
+							 <label class="control-label col-sm-3" for="email">Email:</label>
+							 <div class="col-sm-9 inp-col">
+							    <input type="email" class="form-control"  name="user[email]" placeholder="Enter email">
+							 </div>
+						  </div>			
+						  <div class="form-group">
+							 <label class="control-label col-sm-3" for="pwd">Password:</label>
+							 <div class="col-sm-9 inp-col">
+							    <input type="password" class="form-control"  name="user[password]" placeholder="Enter password">
+							 </div>
+						  </div>
+						  <div class="cad-form-btn">
+							<button type="submit" class="btn save-btn">Save</button>
+							<button type="submit" class="btn cancel-btn">Cancel</button>
+						</div>
+					 </form> 
 				</div>
 			</div>
 		</div>
 	</main>
 	<!--main content end-->
-
 <script src="js/index.js"></script>	
 <script src="js/wow.js"></script>
+<script>
+     $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+</script>
 <script>
    new WOW().init();
 </script>	
