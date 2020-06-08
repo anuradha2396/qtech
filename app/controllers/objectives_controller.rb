@@ -1,6 +1,6 @@
 class ObjectivesController < ApplicationController
 def create
-	@ques = Questions.new(ques_params)
+	@ques = Question.new(question_params)
 	if @ques.save
 		render 'objective'
 	else 
@@ -9,7 +9,7 @@ def create
 end	
 
 def new
-	@ques = Questions.new
+	@ques = Question.new
 end
 
 def ques
@@ -17,7 +17,7 @@ def ques
 end
 
  private
-	def ques_params   
-       params.require(:ques).permit(:question_body, :option1, :option2, :option3, :option4, :modal_ans ,:ans , :marks ,:question_status)   
+	def question_params   
+       params.require(:question).permit(:question_body, :option1, :option2, :option3, :option4, :modal_ans ,:ans , :marks ,:question_status)   
     end  
 end

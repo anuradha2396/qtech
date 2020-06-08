@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
 	def create
-		@sch = Exam_Schdeule.new(exam_Schdeule_params)
+		@sch = Scheduler.new(Scheduler_params)
 		if @sch.save
 			render 'schedule'
 		else 
@@ -9,13 +9,16 @@ class SchedulesController < ApplicationController
 	end
 
 	def new
-		@sch = Exam_Schdeule.new
+		@sch = Scheduler.new
 	end
 
+	def schedule
+		@sch = Scheduler.all
+	end
 
     private
-	def exam_Schdeule_params   
-       params.require(:exam_Schdeule).permit(:start_date, :end_date, :start_time, :end_time, :duration )   
+	def Scheduler_params   
+       params.require(:Scheduler).permit(:startdate, :enddate, :starttime, :endtime, :examname)   
     end  
 
 end

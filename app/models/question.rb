@@ -1,4 +1,4 @@
 class Question < ApplicationRecord
-	belongs_to :subject
-	belongs_to :topic
+	# belongs_to :subject
+	# belongs_to :topic
 end

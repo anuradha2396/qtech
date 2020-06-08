@@ -84,42 +84,37 @@
 				<div class="button-input-container">
 					<div class="button-section">
 						<button class="btn add-new" data-toggle="modal" data-target="#schedule-Modal"><i class="fa fa-plus-circle "></i>New</button>
-						<span class="action-box">
-							<select>
-								<option selected disabled>Action</option>
-								<option>Active</option>
-								<option>Deactive</option>
-							</select>
-							<i class="fa fa-angle-down"></i>
-						</span>
-						</div>
 					</div>
 				</div>
-				<div class="schedule-section">
-					<div class="drop-col-content">
-					<label class="view-sub-heading">Select Exam to see Schedule</label>
-					<select class="form-control" id="select-box">
-						<option selected disabled>Select</option>
-						<option><span>Test Schedule</span></option>
-					</select> 
-					</div>
-				</div>
+				
 				<div class="subject-table">
 					<table class="table table-responsive">
 						<thead class="t-head">
 							<tr>
 								<th><input type="checkbox" name="subject-check"></th>
-								<th>Start Date and Time</th>
-								<th>End Date and Time</th>
-								<th>Status</th>
+								<th>Exam name </th>
+								<th>Start Date </th>
+								<th>End Date </th>
+								<th>Start time</th>
+								<th>End time </th>
 							</tr>
 						</thead>
 						<tbody class="t-body">
 							<tr class="t-row">
-								<td><input type="checkbox" name="subject-check"></td>
-								<td><span>2-5-2020 11:00am</span></td>
-								<td><span>2-5-2020 12:00pm</span></td>
-								<td><span>Active</span></td>
+								<td><input type="checkbox" name="subject-check"></<!-- td>
+								<td><span>DBMS </span></td>
+								<td><span>2-5-2020 </span></td>
+								<td><span>2-5-2020 </span></td>
+								<td><span>11:00am</span></td>
+								<td><span>12:00am</span></td> -->
+							<% @sch.each do |schedule| %>
+							
+							<tr><td><%= schedule.examname %></td>
+							<td><%= schedule.startdate %></td>
+							<td><%= schedulen.enddate%></td></tr>
+							<td><%= schedulen.starttime%></td></tr>
+							<td><%= schedulen.endtime%></td></tr>
+							<%end%>
 							</tr>
 						</tbody>
 					</table>
@@ -139,57 +134,43 @@
 						<h3>New Exam Schedule </h3>
 					</div>
 					<div class="modal-form-content">
-						<form>
+						<form method="post" action="/schedule">
 							<div class="schedule-form">
 								<div class="drop-col-content">
-									<label>Exam Name</label>
-									<select class="form-control">
-										<option selected disabled>Select</option>
-										<option><span>Test</span></option>
-									</select>
+								<label>Exam name</label>
+									<input type="text" name="scheduler[examname]" class="form-control">
 								</div>
 							</div>
 							<div class="schedule-form">
 								<div class="drop-col-content">
 									<label>Exam start time</label>
-									<select class="form-control">
-										<option selected disabled>Select</option>
-										<option><span>Test</span></option>
-									</select>
+									<input type="text" name="scheduler[starttime]" class="form-control">
 								</div>
 							</div>
 							<div class="schedule-form">
 								<div class="drop-col-content">
 									<label>Exam end time</label>
-									<select class="form-control">
-										<option selected disabled>Select</option>
-										<option><span>Test</span></option>
-									</select>
+									<input type="text" name="scheduler[endtime]" class="form-control">
 								</div>	
 							</div>
 							<div class="schedule-form">
 								<div class="drop-col-content">
 									<label>Exam start date</label>
-									<select class="form-control">
-										<option selected disabled>Select</option>
-										<option><span>Test</span></option>
-									</select>
+									<input type="text" name="scheduler[startdate" class="form-control">
 								</div>
 							</div>
 							<div class="schedule-form">
 								<div class="drop-col-content">
-									<label>Exam start date</label>
-									<select class="form-control">
-										<option selected disabled>Select</option>
-										<option><span>Test</span></option>
-									</select>
+									<label>Exam end date</label>
+									<input type="text" name="scheduler[enddate]" class="form-control">
 								</div>
 							</div>
-						</form>
+						
 						<div class="schedule-form-btn">
 							<button type="submit" class="btn save-btn">Save</button>
 							<button type="submit" class="btn cancel-btn">Cancel</button>
 						</div>
+						</form>
 					</div>
 				</div>
 			</div>

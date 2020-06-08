@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  examname: MyString
+  startdate: 2020-06-05
+  enddate: 2020-06-05
+  starttime: 2020-06-05
+  endtime: 2020-06-05
+
+two:
+  examname: MyString
+  startdate: 2020-06-05
+  enddate: 2020-06-05
+  starttime: 2020-06-05
+  endtime: 2020-06-05

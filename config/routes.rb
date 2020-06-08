@@ -30,9 +30,11 @@ Rails.application.routes.draw do
 	post '/ques' , to: 'objectives#create' , as: :create_ques
 
 	get 'schedules/schedule' , to: 'schedules#schedule'
+	post '/schedule' , to: 'schedules#create'
+
 	get 'candidates/candidatedata' , to: 'candidates#candidatedata'
 	get 'candidates/newcandidate' , to: 'candidates#newcandidate'
-	post '/create_candidate' , to: 'candidates#create'
+	post '/create_candidate' , to: 'candidates#create' , as: :create_candidate
 	delete 'candidates/newcandidate' , to: 'candidates#destroy' 
 
 
