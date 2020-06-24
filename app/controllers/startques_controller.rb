@@ -1,5 +1,5 @@
 class StartquesController < ApplicationController
 	def ques
-		@ques = Questions.select(params[:id])
+		@ques = Question.all
 	end
 end

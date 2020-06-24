@@ -20,8 +20,7 @@
 			<div class="question-container">
 				<div class="question-section">
 					<%= image_tag('question.png', :alt => "subject", :class => 'img-responsive') %>
-					<h1>What will happen if in a C program you assign a value to an array element whose subscript exceeds the 
-					size of array?</h1>
+					<% @ques.each do |ques| %>
 				</div>	
 				<div class="option-section">
 						<div class="option-list">
@@ -80,6 +79,7 @@
 				<p>00:00:00</p>
 			</div>
 	</div>
+	<%end%>
 	   <!-- quiz section end --> 
 	   
 <!-- timer start -->
