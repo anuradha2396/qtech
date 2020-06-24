@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     get 'users/login' , to: 'users#login'
     get 'managements/selection' , to: 'managements#selection'
     get '/selection' , to: 'managements#selection'
+    get '/instruction' , to: 'managements#instruction'
+
+    get '/ques' , to: 'startques#ques'
 
 	get  'sessions/new' , to:  'sessions#new'
 	get 'sessions/destroy' , to: 'sessions#destroy'

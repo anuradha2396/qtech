@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Questions</title>
+	</head>
+<body>
+	<!-- header start -->	
+	<header class="navbar site-header" id="navbar">
+		<div class="container">
+			<div class="navbar-header">
+				<a  href="javascript:void(0)" class="navbar-brand site-logo resized-link" id="logo">QuizTech</a>
+			</div>
+		</div>
+	</header>
+	<!-- header end -->
+	
+	<!-- quiz section start -->
+	<div class="quiz-section">
+		<div class="container">
+			<div class="question-container">
+				<div class="question-section">
+					<%= image_tag('question.png', :alt => "subject", :class => 'img-responsive') %>
+					<h1>What will happen if in a C program you assign a value to an array element whose subscript exceeds the 
+					size of array?</h1>
+				</div>	
+				<div class="option-section">
+						<div class="option-list">
+							<label class="option">
+								<input class="option-input-element" type="radio" name="subject-card">
+								<div class="option-input">
+									<div class="option-badge">
+										<span class="badge li-badge">A</span>
+									</div>
+									<div class="option-value">The element will be set to 0.</div>
+								</div>	
+							</label>					
+						</div>
+						<div class="option-list">
+							<label class="option">
+								<input class="option-input-element" type="radio" name="subject-card">
+								<div class="option-input">
+									<div class="option-badge">
+										<span class="badge li-badge">B</span>
+									</div>
+									<div class="option-value">The compiler would report an error.</div>
+								</div>	
+							</label>	
+						</div>
+						<div class="option-list">
+							<label class="option">
+								<input class="option-input-element" type="radio" name="subject-card">
+								<div class="option-input">
+									<div class="option-badge">
+										<span class="badge li-badge">C</span>
+									</div>
+									<div class="option-value">The program may crash if some important data gets overwritten.</div>
+								</div>	
+							</label>		
+						</div>
+						<div class="option-list">
+							<label class="option">
+								<input class="option-input-element" type="radio" name="subject-card">
+								<div class="option-input">
+									<div class="option-badge">
+										<span class="badge li-badge">D</span>
+									</div>
+									<div class="option-value">The array size would appropriately grow.</div>
+								</div>	
+							</label>					
+						</div>
+					
+				</div>
+				<div class="page-btn">
+					<button class="btn submit-btn">Submit</button>
+				</div>	
+			</div>
+			<div class="counter-badge"><span class="counter-que">1</span></div>
+		</div>
+			<div class="quiz-timer">
+				<p>00:00:00</p>
+			</div>
+	</div>
+	   <!-- quiz section end --> 
+	   
+<!-- timer start -->
+<script>
+	var myClock = document.getElementsByTagName('p')[0],
+		seconds = 0, minutes = 0, hours = 0,
+		t;
+
+	function add() {
+		seconds++;
+		if (seconds >= 60) {
+			seconds = 0;
+			minutes++;
+			if (minutes >= 60) {
+				minutes = 0;
+				hours++;
+			}
+		}
+		
+		myClock.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") +
+		 ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") +
+		  ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+		timer();
+	}
+	function timer() {
+		t = setTimeout(add, 1000);
+	}
+	timer();
+</script>	
+<!-- timer end -->
+
+</body>
+</html>
+	

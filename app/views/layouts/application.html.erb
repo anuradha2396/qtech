@@ -12,7 +12,9 @@
       <% unless controller_name=="questions"%>
       <% unless controller_name=="homes" && action_name=="dashboard" %>
       <% unless controller_name=="examcreations" && action_name=="examcreation" %>
+      <% unless controller_name=="managements" && action_name=="selection" %>
       <%= render partial:  'layouts/header'%>
+      <%end%>
       <%end%>
       <%end%>
       <%end%>
@@ -26,7 +28,13 @@
       <% unless controller_name=="examcreations" && action_name=="examcreation" %>
       <% unless controller_name=="examcreations" && action_name=="newexam" %>
       <% unless controller_name=="candidates" && action_name=="newcandidate" %>
+      <% unless controller_name=="users" && action_name=="login" %>
+      <% unless controller_name=="managements" && action_name=="selection" %>
+      <% unless controller_name=="startques" && action_name=="ques" %>
       <%= render  partial: 'layouts/footer'%>
+      <%end%>
+      <%end%>
+      <%end%>
       <%end%>
       <%end%>
       <%end%>
